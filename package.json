@@ -1,0 +1,23 @@
+{
+  "name": "climbing-app",
+  "version": "1.0.0",
+  "description": "Climbing App",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adrnel/climbing-app.git"
+  },
+  "author": "Adrian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adrnel/climbing-app/issues"
+  },
+  "homepage": "https://github.com/adrnel/climbing-app#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "gulp": "^3.9.1"
+  }
+}
