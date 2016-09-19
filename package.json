@@ -17,7 +17,11 @@
   },
   "homepage": "https://github.com/adrnel/climbing-app#readme",
   "dependencies": {
+    "del": "^2.2.2",
     "express": "^4.14.0",
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-sass": "^2.3.2",
+    "gulp-uglify": "^2.0.0"
   }
 }
