@@ -15,7 +15,8 @@ gulp.task('build', ['clean'], function() {
         'appCSS',
         'externalJS',
         'appJS',
-        'html'
+        'html',
+        'connect'
     ]);
 });
 
@@ -37,8 +38,8 @@ gulp.task('appCSS', function() {
     return gulp.src('src/styles/*.scss')
     .pipe(concat('layout.css'))
     .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('dist/styles'));
-//    .pipe(connect.reload());
+    .pipe(gulp.dest('dist/styles'))
+    .pipe(connect.reload());
 });
 
 gulp.task('externalJS', function() {
@@ -53,8 +54,8 @@ gulp.task('appJS', function() {
     return gulp.src('src/js/*.js')
     .pipe(concat('scripts.js'))
     .pipe(uglify())
-    .pipe(gulp.dest('dist/js'));
-//    .pipe(connect.reload());
+    .pipe(gulp.dest('dist/js'))
+    .pipe(connect.reload());
 });
 
 gulp.task('html', function() {
@@ -64,13 +65,14 @@ gulp.task('html', function() {
 
 // Rerun the task when a file changes
 gulp.task('watch', function() {
-  gulp.watch('src/js/*', ['appJS']);
-  gulp.watch('src/styles/*', ['appCSS']);
+  gulp.watch('src/js/*.js', ['appJS']);
+  gulp.watch('src/styles/*.scss', ['appCSS']);
+  gulp.watch('src/**/*.html', ['html']);
 });
 
-//gulp.task('connect', function() {
-//  connect.server({
-//    root: './',
-//    livereload: true
-//  });
-//});
+gulp.task('connect', function() {
+  connect.server({
+    root: './',
+    livereload: true
+  });
+});
