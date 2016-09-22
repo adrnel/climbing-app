@@ -1,1 +1,0 @@
-console.log("Scripts.js successfully loaded");
