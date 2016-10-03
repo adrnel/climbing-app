@@ -1,0 +1,29 @@
+CREATE TABLE users
+(
+user_id int NOT NULL AUTO_INCREMENT,
+user_name varchar(20) NOT NULL,
+user_password varchar(20) NOT NULL,
+user_email varchar(40) NOT NULL,
+PRIMARY KEY (user_id)
+)
+
+
+CREATE TABLE arch_scores
+(
+score_id int NOT NULL AUTO_INCREMENT,
+user_id int NOT NULL,
+spotty int NOT NULL,
+black int NOT NULL,
+tiger int NOT NULL,
+blue int NOT NULL,
+salmon int NOT NULL,
+yellow int NOT NULL,
+purple_yellow int NOT NULL,
+hendrix int NOT NULL,
+red int NOT NULL,
+white int NOT NULL,
+green int NOT NULL,
+score int NOT NULL,
+PRIMARY KEY (score_id),
+FOREIGN KEY (user_id) REFERENCES users(user_id)
+)

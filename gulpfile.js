@@ -15,6 +15,7 @@ gulp.task('build', ['clean'], function() {
         'appCSS',
         'externalJS',
         'appJS',
+        'images',
         'html',
         'connect'
     ]);
@@ -60,6 +61,11 @@ gulp.task('appJS', function() {
 
 gulp.task('html', function() {
     return gulp.src('src/**/*.html')
+    .pipe(gulp.dest('dist'));
+});
+
+gulp.task('images', function() {
+    return gulp.src('src/**/*.jpg')
     .pipe(gulp.dest('dist'));
 });
 
