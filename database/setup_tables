@@ -1,10 +1,13 @@
 CREATE TABLE users
 (
 user_id int NOT NULL AUTO_INCREMENT,
-user_name varchar(20) NOT NULL,
+user_username varchar(20) NOT NULL,
+user_firstname varchar(20) NOT NULL,
+user_lastname varchar(20) NOT NULL,
 user_password varchar(20) NOT NULL,
 user_email varchar(40) NOT NULL,
-PRIMARY KEY (user_id)
+PRIMARY KEY (user_id),
+CONSTRAINT contacts_unique UNIQUE (user_email, user_name)
 )
 
 

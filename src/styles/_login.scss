@@ -1,0 +1,75 @@
+.login-container{
+    background: #09bad8;
+    margin: auto;
+    width: 300px;
+    padding: 0 0px 20px 0px;
+    border-radius: 7px;
+    font-family: ‘Palatino Linotype’, ‘Book Antiqua’, Palatino, serif;
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+    nav{
+        background-color: #bdd2d1;
+        border-radius: 7px;
+    }
+
+    ul{
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    li{
+        border-top-left-radius: 7px;
+        border-top-right-radius: 7px;
+        background-color: #09bad8;
+        width: 50%;
+        display: inline-block;
+        padding: 20px 0px 10px 0px;
+    }
+    li.unselected{
+        background-color: #bdd2d1;
+        color: #a9acaf;
+    }
+    .input-section{
+        padding-top: 10px;
+    }
+    input{
+
+        width: 250px;
+    }
+    .form-input{
+        height: 30px;
+        padding-left: 5px;
+        margin-top: 10px;
+        border-radius: 2px;
+        border: 1px #c6dff5 solid;
+    }
+    .form-button{
+        height: 35px;
+        margin-top: 20px;
+        border-radius: 2px;
+        border: 1px #28af8a solid;
+        color: white;
+        background-color: #51da56;
+        font-weight: bold;
+        font-size: 20px;
+
+    }
+    .form-button:hover{
+        background-color: #13ca27;
+    }
+
+}
+
+.title{
+    display: block;
+    margin: auto;
+    width: 400px;
+    Margin-top: 100px;
+    padding: 20px;
+}
+
+.form{
+    display: inline-block;
+    text-align: center;
+}
