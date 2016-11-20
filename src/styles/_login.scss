@@ -30,6 +30,11 @@
         background-color: #bdd2d1;
         color: #a9acaf;
     }
+    li.unselected:hover{
+        background-color: #bdd2d1;
+        color: #a9acaf;
+        cursor:pointer
+    }
     .input-section{
         padding-top: 10px;
     }
@@ -43,6 +48,7 @@
         margin-top: 10px;
         border-radius: 2px;
         border: 1px #c6dff5 solid;
+        font-size: 16px;
     }
     .form-button{
         height: 35px;

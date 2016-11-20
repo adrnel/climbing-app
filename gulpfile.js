@@ -52,7 +52,7 @@ gulp.task('externalJS', function() {
 });
 
 gulp.task('appJS', function() {
-    return gulp.src('src/js/*.js')
+    return gulp.src('src/js/**/*.js')
     .pipe(concat('scripts.js'))
     .pipe(uglify())
     .pipe(gulp.dest('dist/js'))
