@@ -1,6 +1,20 @@
-$primary-color: yellow;
+$primary-button: #102ab3;
+$primary-hover: #14c8e2;
+$form-color: #e7feff;
+$form-border: #c6dff5;
+
+html, body {
+    margin: 0;
+    height: 100%;
+    padding: 0;
+    overflow: hidden;
+}
 body {
-    background: orange;
+  background: #00f3ff;
+  background: -webkit-linear-gradient(left top, #00f3ff, #00ff95);
+  background: -o-linear-gradient(bottom right, #00f3ff, #00ff95);
+  background: -moz-linear-gradient(bottom right, #00f3ff, #00ff95);
+  background: linear-gradient(to bottom right, #00f3ff, #00ff95);
 }
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important;

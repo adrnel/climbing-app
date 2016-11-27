@@ -11,14 +11,10 @@ var connection = mysql.createConnection({
 
 connection.connect();
 
-router.get('/api/users/:userid/:username',function(req,res){
+router.get('/api/users/',function(req,res){
 
-  console.log('Get request received');
-
-  var queryById = req.params.userid;
-  console.log("Get the data for " + queryById);
-  var queryByName = req.params.username;
-  console.log("Get the data for " + queryByName);
+  var queryById = req.query.userid;
+  var queryByName = req.query.username;
 
   connection.query('SELECT * FROM users', function(err, rows, fields) {
     if (err) {
@@ -29,6 +25,49 @@ router.get('/api/users/:userid/:username',function(req,res){
 
     res.json(rows);
   });
+
+});
+
+router.get('/api/archscores/',function(req,res){
+
+  console.log('Get request received');
+
+  var scoreId = req.query.scoreId;
+  var userId = req.query.userId;
+  if (scoreId && userId){
+    connection.query('SELECT * FROM arch_scores WHERE score_id='+scoreId+" AND user_id="+userId, function(err, rows, fields) {
+    if (err) {
+        console.error(err);
+        return;
+    }
+    console.log('The database users contains: ', rows);
+
+    res.json(rows);
+  });
+  } else if (scoreId){
+      connection.query('SELECT * FROM arch_scores WHERE score_id='+scoreId, function(err, rows, fields) {
+        if (err) {
+            console.error(err);
+            return;
+        }
+        console.log('The database users contains: ', rows);
+
+        res.json(rows);
+      });
+  } else if (userId){
+      connection.query('SELECT * FROM arch_scores WHERE user_id='+userId, function(err, rows, fields) {
+        if (err) {
+            console.error(err);
+            return;
+        }
+        console.log('The database users contains: ', rows);
+
+        res.json(rows);
+      });
+  } else {
+     res.json([]);
+     return;
+  }
 
 });
 

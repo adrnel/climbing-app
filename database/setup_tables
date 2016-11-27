@@ -30,3 +30,15 @@ score int NOT NULL,
 PRIMARY KEY (score_id),
 FOREIGN KEY (user_id) REFERENCES users(user_id)
 )
+
+mysql -u root -p
+password
+show databases;
+use climbing;
+show tables;
+SELECT * FROM users;
+SELECT * FROM arch_scores;
+
+INSERT INTO arch_scores (user_id, spotty, black, tiger, blue, salmon,
+yellow, purple_yellow, hendrix, red, white, green, score)
+VALUES (1, 0, 3, 4, 5, 4, 3, 0, 0, 0, 0, 0, 0);

@@ -5,7 +5,7 @@ router.get('/',function(req,res){
 
     console.log("index.js function");
 
-     res.sendFile('index.html', {root: './dist'});
+     res.sendFile('login.html', {root: './dist'});
 
 });
 
