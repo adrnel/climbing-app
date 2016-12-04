@@ -58,6 +58,17 @@
         border: 1px $form-border solid;
         font-size: 16px;
     }
+        .error-section{
+        margin: auto;
+        margin-top: 10px;
+        width: 250px;
+        border: red solid 1px;
+        background-color: #f5ffbb;
+        color: red;
+        font-size: 12px;
+        line-height: 12px;
+        padding-top: 4px;
+    }
     .form-button{
         height: 35px;
         margin-top: 20px;

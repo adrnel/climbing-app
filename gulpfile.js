@@ -16,6 +16,7 @@ gulp.task('build', ['clean'], function() {
         'externalJS',
         'appJS',
         'images',
+        'fonts',
         'html',
         'connect'
     ]);
@@ -30,7 +31,7 @@ gulp.task('default', ['build'], function() {
 
 
 gulp.task('externalCSS', function() {
-    return gulp.src(['src/bower_components/bootstrap/dist/css/bootstrap.min.css'])
+    return gulp.src(['src/bower_components/bootstrap/dist/css/bootstrap.min.css', 'src/bower_components/font-awesome/css/font-awesome.min.css'])
     .pipe(concat('libs.css'))
     .pipe(gulp.dest('dist/styles'));
 });
@@ -67,6 +68,11 @@ gulp.task('html', function() {
 gulp.task('images', function() {
     return gulp.src(['src/**/*.jpg','src/**/*.png'])
     .pipe(gulp.dest('dist'));
+});
+
+gulp.task('fonts', function() {
+    return gulp.src('src/bower_components/font-awesome/fonts/*.*')
+    .pipe(gulp.dest('dist/fonts/'));
 });
 
 // Rerun the task when a file changes

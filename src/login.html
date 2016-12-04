@@ -15,7 +15,7 @@
         <img class="title" src="img/Climbing-logo.png" alt="Climbing Logo">
         <div class="login-container">
             <div class="form">
-                <form class="login-form">
+                <form class="login-form" ng-submit="loginSubmit()">
                     <nav class="tab-section">
                         <ul>
                             <li class="login-tab" ng-click="clickLoginTab()" ng-class="isLogin?'selected':'unselected'">Login</li
@@ -23,16 +23,27 @@
                         </ul>
                     </nav>
                     <div class="input-section">
-                        <input class="form-input ng-cloak" type="text" placeholder="Email Address" ng-if="isSignup">
-                        <input class="form-input" type="text" placeholder="Username">
-                        <input class="form-input" type="password" placeholder="Password">        
-                        <input class="form-input ng-cloak" type="password" placeholder="Confirm Password" ng-if="isSignup">
+                        <input class="form-input ng-cloak" ng-model="form.email" type="text" placeholder="Email Address" ng-if="isSignup" required>
+                        <input class="form-input" ng-model="username" type="text" placeholder="Username" required>
+                        <input class="form-input" ng-model="password" type="password" placeholder="Password" required>
+                        <input class="form-input ng-cloak" ng-model="confirmPassword" type="password" placeholder="Confirm Password" ng-if="isSignup" required>
+                    </div>
+
+                    <div class="error-section ng-cloak" ng-if="loginError && isLogin">
+                        <label><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Incorrect username and/or password</label>
+                    </div>
+                    <div class="error-section ng-cloak" ng-if="signupError && isSignup">
+                        <label><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Username or Email Address already exists</label>
+                    </div>
+
+                    <div class="button-section">
+                        <input class="form-button" type="submit" value="Login" ng-if="isLogin">
                     </div>
                     <div class="button-section">
-                        <input class="form-button" type="submit" value="Login">
+                        <input class="form-button ng-cloak" type="submit" value="Signup" ng-if="isSignup">
                     </div>
                 </form>
-            </div>
-        </div>
-    </body>
+</div>
+</div>
+</body>
 </html>

@@ -3,10 +3,10 @@ var router = express.Router();
 var mysql = require('mysql');
 
 var connection = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'root',
-  password : 'password',
-  database : 'climbing'
+  host: 'localhost',
+  user: 'root',
+  password: 'password',
+  database: 'climbing'
 });
 
 connection.connect();
@@ -45,6 +45,7 @@ router.get('/api/archscores/', function(req, res) {
     connection.query('SELECT * FROM arch_scores WHERE score_id=' + scoreId + ' AND user_id=' + userId, function(err, rows, fields) {
       if (err) {
         console.error(err);
+        res.status(404);
         res.json(["Query error"]);
         return;
       }
@@ -61,6 +62,7 @@ router.get('/api/archscores/', function(req, res) {
     connection.query('SELECT * FROM arch_scores WHERE score_id=' + scoreId, function(err, rows, fields) {
       if (err) {
         console.error(err);
+        res.status(404);
         res.json(["Query error"]);
         return;
       }
@@ -77,6 +79,7 @@ router.get('/api/archscores/', function(req, res) {
     connection.query('SELECT * FROM arch_scores WHERE user_id=' + userId, function(err, rows, fields) {
       if (err) {
         console.error(err);
+        res.status(404);
         res.json(["Query error"]);
         return;
       }
@@ -84,7 +87,6 @@ router.get('/api/archscores/', function(req, res) {
 
       if (rows.length > 0) {
         res.json(rows);
-        res.json(["Query error"]);
       } else {
         res.status(204);
         res.json(["No scores found"]);
@@ -108,36 +110,32 @@ router.post('/api/signup/', function(req, res) {
   console.log('password', password);
 
   if (username && password && email) {
-    console.log('1');
     connection.query("SELECT * FROM users WHERE user_email='" + email + "'", function(err, rows, fields) {
       if (err) {
-        console.log('2');
         console.error(err);
+        res.status(404);
         res.json(["Query error"]);
         return;
       } else if (rows.length > 0) {
-        console.log('3');
         res.status(403);
         res.json(["This email address already exists"]);
         return;
       } else {
-        console.log('4');
         connection.query("SELECT * FROM users WHERE user_name='" + username + "'", function(err, rows, fields) {
           if (err) {
-            console.log('2');
             console.error(err);
+            res.status(404);
             res.json(["Query error"]);
             return;
           } else if (rows.length > 0) {
-            console.log('3');
             res.status(403);
             res.json(["This username already exists"]);
             return;
           } else {
             connection.query("INSERT INTO `climbing`.`users` (`user_name`, `user_password`, `user_email`, `user_role`) VALUES ('" + username + "', '" + password + "', '" + email + "', 'user')", function(err, rows, fields) {
               if (err) {
-                console.log('5');
                 console.error(err);
+                res.status(404);
                 res.json(["Query error"]);
                 return;
               }
