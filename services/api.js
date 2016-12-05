@@ -132,16 +132,17 @@ router.post('/api/signup/', function(req, res) {
             res.json(["This username already exists"]);
             return;
           } else {
-            connection.query("INSERT INTO `climbing`.`users` (`user_name`, `user_password`, `user_email`, `user_role`) VALUES ('" + username + "', '" + password + "', '" + email + "', 'user')", function(err, rows, fields) {
+            connection.query("INSERT INTO `climbing`.`users` (`user_name`, `user_password`, `user_email`, `user_role`, `user_group`) VALUES ('" + username + "', '" + password + "', '" + email + "', 'user', 'default')", function(err, rows, fields) {
               if (err) {
                 console.error(err);
                 res.status(404);
                 res.json(["Query error"]);
                 return;
+              } else {
+                  res.status(200);
+                  res.json(["The user has been added to the database"]);
               }
             });
-            res.status(200);
-            res.json(["The user has been added to the database"]);
           }
         });
       }
