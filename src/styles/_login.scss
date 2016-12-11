@@ -98,3 +98,18 @@
     display: inline-block;
     text-align: center;
 }
+
+@media screen and (max-height: 540px) {
+    body{
+        overflow: scroll;
+    }
+    .title{
+        Margin-top: 0px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .title{
+        width: 300px;
+    }
+}
