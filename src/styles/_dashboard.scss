@@ -1,0 +1,87 @@
+.header-container{
+    background-color: white;
+    border: solid 1px;
+    height: 42px;
+    .header-logo{
+
+        height: 40px;
+        float: left;
+        display: inline;
+    }
+    .header-list ul{
+        height: 40px;
+        float: right;
+        padding: 0px 5% 0px 0px;
+        margin: 0px;
+        color: #000;
+    }
+    .header-list li{
+        list-style-type: none;
+        display: inline;
+        padding: 10px 30px;
+        font-size: 18px;
+        position: relative;
+        top: 9px;
+    }
+    .header-list .selected a{
+        color: blue;
+        pointer-events: none;
+        cursor: default;
+    }
+    .header-list .unselected a{
+        color: #000;
+        text-decoration: none;
+    }
+    .header-list .unselected-icon a{
+        color: #6d6d6d;
+        text-decoration: none;
+    }
+    .header-list .unselected a:hover{
+       background-color: #f1f3f5;
+       color: #c50000;
+    }
+    .header-list .unselected-icon a:hover{
+         color: #000;
+    }
+    .header-list .desktop-hidden.unselected-icon{
+      display: none;
+    }
+}
+
+.image-one-container, .image-two-container{
+    height: 400px;
+    .image-one, .image-two{
+        height: 400px;
+        background-size: cover;
+        background-position: center center;
+    }
+    .image-one{
+        background-image: url(../img/climbing-scores.jpg);
+    }
+    .image-two{
+        background-image: url(../img/graphs.jpg);
+    }
+}
+
+.footer-container{
+    height: 200px;
+}
+
+@media screen and (max-width: 800px) {
+    .header-container{
+        position: fixed;
+        width: 100%;
+
+        .header-list li{
+            display: none;
+        }
+
+        .header-list li.unselected-icon{
+            display: inline;
+        }
+
+        .header-list .desktop-hidden.unselected-icon{
+            display: inline;
+        }
+    }
+}

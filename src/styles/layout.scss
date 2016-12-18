@@ -7,7 +7,7 @@ html, body {
     margin: 0;
     height: 100%;
     padding: 0;
-    overflow: hidden;
+    overflow: auto;
 }
 body {
   background: #00f3ff;
@@ -20,4 +20,7 @@ body {
   display: none !important;
 }
 
-@import 'login'
+
+
+@import 'login';
+@import 'dashboard';
