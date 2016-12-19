@@ -1,3 +1,12 @@
+.login-body{
+height: inherit;
+  background: #00f3ff;
+  background: -webkit-linear-gradient(left top, #00f3ff, #00ff95);
+  background: -o-linear-gradient(bottom right, #00f3ff, #00ff95);
+  background: -moz-linear-gradient(bottom right, #00f3ff, #00ff95);
+  background: linear-gradient(to bottom right, #00f3ff, #00ff95);
+}
+
 .login-container{
     background: $form-color;
     margin: auto;

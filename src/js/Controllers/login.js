@@ -33,7 +33,7 @@ angular.module('climbing-app', [])
                 $http.put("./api/login/", loginForm)
                     .then(function(response) {
                         console.log("successful login, here's the user:", response.data);
-                        window.location.href = "./loggedin.html";
+                        window.location.href = "./dashboard.html";
                     }, function(response){
                         $scope.loginError = true;
                         console.log("Failure");
@@ -49,7 +49,7 @@ angular.module('climbing-app', [])
                 $http.post("./api/signup/", signupForm)
                     .then(function(response) {
                         console.log("successful sugnup, here's the user:", response.data);
-                        window.location.href = "./loggedin.html";
+                        window.location.href = "./dashboard.html";
                     }, function(response){
                         $scope.signupError = true;
                         console.log("Failure");
