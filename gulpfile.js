@@ -25,8 +25,8 @@ gulp.task('build', ['clean'], function() {
 
 gulp.task('default', ['build'], function() {
     gulp.start([
-            'watch',
-        ]);
+        'watch',
+    ]);
 });
 
 
@@ -78,6 +78,7 @@ gulp.task('fonts', function() {
 gulp.task('watch', function() {
   gulp.watch('src/js/*.js', ['appJS']);
   gulp.watch('src/styles/*.scss', ['appCSS']);
+  gulp.watch('src/img/*.*', ['images']);
   gulp.watch('src/**/*.html', ['html']);
 });
 
