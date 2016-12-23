@@ -52,6 +52,10 @@
     }
 }
 
+#mobile-dropdown-header-container{
+    display: none;
+}
+
 .image-one-container, .image-two-container{
     height: 400px;
     .image-one, .image-two{
@@ -61,9 +65,43 @@
     }
     .image-one{
         background-image: url(../img/climbing-scores.jpg);
+
     }
     .image-two{
         background-image: url(../img/graphs.jpg);
+    }
+    .button-link-one, .button-link-two,{
+        position: relative;
+        top: 45%;
+        left: 55%;
+        h2{
+            margin-top: 0;
+            margin-bottom: 20px;
+            color: white;
+            font-size: 50px;
+                text-decoration:none;
+                text-shadow:0px 1px 0px black;
+        }
+        .button-style{
+            background-color:#44c767;
+            padding:16px 31px;
+            border: 1px solid #18ab29;
+            border-radius: 28px;
+            color: white;
+            margin-top: 20px;
+            text-decoration:none;
+            text-shadow:0px 1px 0px #2f6627;
+        }
+        .button-style:hover{
+            background-color:#5cbf2a;
+        }
+    }
+    .button-link-one{
+        left: 55%;
+    }
+
+    .button-link-two{
+        left: 20%;
     }
 }
 
@@ -134,13 +172,40 @@
         }
 
         .header-list ul{
-            padding: 0px 1% 0px 0px;
+            padding: 0px 0% 0px 0px;
         }
 
         .center-menu-mobile{
             width: 43%;
         }
     }
+
+    #mobile-dropdown-header-container.showing{
+        display: block;
+        margin-top: 40px;
+        position: fixed;
+        width: 100%;
+        background-color: white;
+        .dropdown-item{
+            text-align: center;
+            height: 40px;
+            line-height: 40px;
+            border: solid 1px;
+        }
+    }
+
+    .image-one-container, .image-two-container{
+        .image-one, .image-two{
+            .button-link-one, .button-link-two{
+                text-align: center;
+                left: auto;
+            }
+        }
+        .image-two{
+            background-image: url(../img/graphs.jpg);
+        }
+    }
+
     .footer-container{
         margin-left: 0;
         margin-right: 0;

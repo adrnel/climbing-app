@@ -76,7 +76,7 @@ gulp.task('fonts', function() {
 
 // Rerun the task when a file changes
 gulp.task('watch', function() {
-  gulp.watch('src/js/*.js', ['appJS']);
+  gulp.watch('src/js/**/*.js', ['appJS']);
   gulp.watch('src/styles/*.scss', ['appCSS']);
   gulp.watch('src/img/*.*', ['images']);
   gulp.watch('src/**/*.html', ['html']);

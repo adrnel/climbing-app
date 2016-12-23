@@ -1,4 +1,4 @@
-angular.module('climbing-app', [])
+angular.module('climbing-app')
     .controller("loginCtrl", ["$scope", "$location", "$http", function ($scope, $location, $http) {
         $scope.isLogin = true;
         $scope.isSignup = false;
