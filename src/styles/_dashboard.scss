@@ -6,6 +6,7 @@
     background-color: white;
     border: solid 1px;
     height: 42px;
+    z-index: 4;
     .header-logo{
 
         height: 40px;
@@ -73,7 +74,6 @@
     .button-link-one, .button-link-two,{
         position: relative;
         top: 45%;
-        left: 55%;
         h2{
             margin-top: 0;
             margin-bottom: 20px;
@@ -97,11 +97,11 @@
         }
     }
     .button-link-one{
-        left: 55%;
+        left: 52%;
     }
 
     .button-link-two{
-        left: 20%;
+        left: 27%;
     }
 }
 
@@ -176,7 +176,7 @@
         }
 
         .center-menu-mobile{
-            width: 43%;
+            width: 45%;
         }
     }
 
@@ -186,6 +186,7 @@
         position: fixed;
         width: 100%;
         background-color: white;
+        z-index: 4;
         .dropdown-item{
             text-align: center;
             height: 40px;
@@ -211,7 +212,50 @@
         margin-right: 0;
         .footer-column-one, .footer-column-two, .footer-column-three {
             width: 100%;
-            height: 150px;
+            height: 250px;
+        }
+        .footer-header{
+            font-size: 52px;
+        }
+        p{
+            font-size: 31px;
+        }
+        img{
+            width: 90px;
+                height: 80px;
+        }
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .header-container {
+        .center-menu-mobile {
+            width: 39%;
+        }
+    }
+    .header-container {
+        .header-logo {
+            top: 10px;
+            height: 25px;
+            position: relative;
+        }
+    }
+    .footer-container{
+        margin-left: 0;
+        margin-right: 0;
+        .footer-column-one, .footer-column-two, .footer-column-three {
+            width: 100%;
+            height: 200px;
+        }
+        .footer-header{
+            font-size: 40px;
+        }
+        p{
+            font-size: 22px;
+        }
+        img{
+            width: 70px;
+                height: 60px;
         }
     }
 }
