@@ -100,6 +100,32 @@ router.get('/api/archscores/', function(req, res) {
 
 });
 
+router.post('/api/archscores/', function(req, res) {
+  var spotty = req.body.spotty || 0;
+  var black = req.body.black || 0;
+  var tiger = req.body.tiger || 0;
+  var blue = req.body.blue || 0;
+  var salmon = req.body.salmon || 0;
+  var yellow = req.body.yellow || 0;
+  var purple_yellow = req.body.purple_yellow || 0;
+  var hendrix = req.body.hendrix || 0;
+  var red = req.body.red || 0;
+  var white = req.body.white || 0;
+  var green = req.body.green || 0;
+  var score = req.body.score || 0;
+  connection.query("INSERT INTO `climbing`.`arch_scores` (`user_id`, `spotty`, `black`, `tiger`, `blue`, `salmon`, `yellow`, `purple_yellow`, `hendrix`, `red`, `white`, `green`, `score`) VALUES (" + 1 + ", " + spotty + ", " + black + ", " + tiger + ", " + blue + ", " + salmon + ", " + yellow + ", " + purple_yellow + ", " + hendrix + ", " + red + ", " + white + ", " + green + ", " + green + ")", function(err, rows, fields) {
+    if (err) {
+      console.error(err);
+      res.status(404);
+      res.json(["Query error"]);
+      return;
+    } else {
+        res.status(200);
+        res.json(["The score has been added to the database"]);
+    }
+  });
+});
+
 router.post('/api/signup/', function(req, res) {
 
   var username = req.body.username;
