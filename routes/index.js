@@ -9,11 +9,11 @@ router.get('/',function(req, res){
 
 });
 
-router.get('/dashboard',function(req, res){
+router.get('/home',function(req, res){
 
     console.log("index.js function");
 
-    res.sendFile('dashboard.html', {root: './dist'});
+    res.sendFile('home.html', {root: './dist'});
 
 });
 

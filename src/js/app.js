@@ -1,1 +1,1 @@
-angular.module('climbing-app', []);
+angular.module('climbingApp', []);

@@ -46,6 +46,7 @@ gulp.task('appCSS', function() {
 gulp.task('externalJS', function() {
     return gulp.src(['src/bower_components/jquery/dist/jquery.min.js',
     'src/bower_components/angular/angular.min.js',
+    'src/bower_components/angular-route/angular-route.min.js',
     'src/bower_components/bootstrap/dist/js/bootstrap.min.js'])
     .pipe(concat('libs.js'))
     .pipe(gulp.dest('dist/js'));
@@ -54,7 +55,6 @@ gulp.task('externalJS', function() {
 gulp.task('appJS', function() {
     return gulp.src('src/js/**/*.js')
     .pipe(concat('scripts.js'))
-    .pipe(uglify())
     .pipe(gulp.dest('dist/js'))
     .pipe(connect.reload());
 });

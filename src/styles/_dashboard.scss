@@ -193,6 +193,12 @@
             line-height: 40px;
             border: solid 1px;
         }
+        .dropdown-item{
+            a{
+                color: #000;
+                text-decoration: none;
+            }
+        }
     }
 
     .image-one-container, .image-two-container{

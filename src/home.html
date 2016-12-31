@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app = "climbing-app" lang="en">
+<html ng-app = "climbingApp" lang="en">
 <head>
     <title>Climbing App</title>
     <meta charset="utf-8">
@@ -11,17 +11,17 @@
     <style>
     </style>
 </head>
-<body class="background-style" ng-controller="dashboardCtrl">
+<body class="background-style" ng-controller="homeCtrl">
 <div class="header-container">
     <img class="header-logo" src="img/Climbing-logo.png" alt="Climbing Logo">
 
 
     <span class="header-list">
         <ul>
-            <li class="selected"><a href="#">Home</a></li>
-            <li class="unselected"><a href="#">Post Scores</a></li>
-            <li class="unselected"><a href="#">Graphs</a></li>
-            <li class="unselected"><a href="#">Admin</a></li>
+            <li class="selected"><a href="#dashboard">Home</a></li>
+            <li class="unselected"><a href="#scores">Post Scores</a></li>
+            <li class="unselected"><a href="#graphs">Graphs</a></li>
+            <li class="unselected"><a href="#admin">Admin</a></li>
             <li class="unselected-icon"><a href="#"><i class="fa fa-user" aria-hidden="true"></i></a></li>
         </ul>
     </span>
@@ -32,28 +32,14 @@
     </span>
 </div>
 <div id="mobile-dropdown-header-container" ng-class="isDropdown?'showing':'hiding'">
-    <div class="dropdown-item">Home</div>
-    <div class="dropdown-item">Post Scores</div>
-    <div class="dropdown-item">Graphs</div>
-    <div class="dropdown-item">Admin</div>
+    <div class="dropdown-item"><a href="#dashboard">Home</a></div>
+    <div class="dropdown-item"><a href="#scores">Post Scores</a></div>
+    <div class="dropdown-item"><a href="#graphs">Graphs</a></div>
+    <div class="dropdown-item"><a href="#admin">Admin</a></div>
 </div>
-<div class="image-one-container">
-    <div class="image-one">
-        <div class="button-link-one">
-            <h2>Post your scores</h2>
-            <a class="button-style" href="#">Scores</a>
-        </div>
-    </div>
-</div>
-<div class="image-two-container">
-    <div class="image-two">
-        <div class="button-link-two">
-            <h2>View your results</h2>
-            <a class="button-style" href="#">Graphs</a>
-        </div>
-    </div>
-</div>
+<div ng-view id="main">
 
+</div>
 <div class="footer-container">
     <div class="footer-column-one">
         <h2 class="footer-header">Address</h2></br>
