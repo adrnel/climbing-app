@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+var env = require('./env');
 var routes = require('./routes/index');
 var api = require('./services/api');
 var bodyParser = require('body-parser');
@@ -20,7 +21,7 @@ app.get('/index', function (req, res) {
   res.sendFile(__dirname + '/dist/index.html');
 });
 
-app.listen(3000, function () {
-  console.log('Example app listening on port 3000!');
+app.listen(process.env.PORT_NUMBER, function () {
+  console.log('Example app listening on port '+ process.env.PORT_NUMBER+'!');
 });
 
