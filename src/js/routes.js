@@ -13,14 +13,14 @@ angular.module('climbingApp', ['ngRoute']).config(function($routeProvider) {
         })
 
         // route for the about page
-        .when('/scored', {
-            templateUrl : 'pages/scores.html',
-            controller  : 'scoresController'
+        .when('/scores', {
+            templateUrl : 'templates/scores.html',
+            controller  : 'scoresCtrl'
         })
 
         // route for the contact page
-        .when('/contact', {
-            templateUrl : 'pages/contact.html',
-            controller  : 'contactController'
+        .when('/graphs', {
+            templateUrl : 'templates/graphs.html',
+            controller  : 'graphsCtrl'
         });
 });
