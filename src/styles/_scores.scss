@@ -1,6 +1,5 @@
 .score-container{
     height: 800px;
-    background-color: white;
     color: black;
     text-align: center;
     .form-container{
@@ -8,18 +7,40 @@
         width: 500px;
         padding-top: 70px;
         .scores-form{
-            background-color: #03a9f4;
+            background-color: #caefff;
             h2{
                 font-weight: bold;
                 padding: 20px 0px;
             }
-            input, button{
-                width: 60%;
+            input{
+                width: 40%;
+                margin: 10px;
+            }
+
+            button{
+                width: 12%;
                 margin: 10px;
             }
             label{
                 width: 20%;
                 text-align: left;
+            }
+            .plus{
+                background-color: green;
+            }
+            .minus{
+                background-color: red;
+            }
+            .score{
+                display: inline-block;
+                text-align: left;
+                width: 56%;
+                font-size: 20px;
+                font-weight: bold;
+                margin: 10px;
+            }
+            .score-submit{
+                padding-bottom: 10px;
             }
         }
     }
