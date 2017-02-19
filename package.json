@@ -26,5 +26,9 @@
     "gulp-sass": "^2.3.2",
     "gulp-uglify": "^2.0.0",
     "mysql": "^2.11.1"
+  },
+  "devDependencies": {
+    "gulp-jshint": "^2.0.4",
+    "jshint": "^2.9.4"
   }
 }

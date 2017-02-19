@@ -13,20 +13,20 @@ angular.module('climbingApp')
             white:0,
             green:0,
             totalScore:0
-        }
+        };
         $scope.onlyNumbers = /^\d+$/;
 
         $scope.addOne = function(colourIndex){
             $scope.scores[Object.keys($scope.scores)[colourIndex]]++;
-        }
+        };
         $scope.minusOne = function(colourIndex){
             if($scope.scores[Object.keys($scope.scores)[colourIndex]] >= 1){
                 $scope.scores[Object.keys($scope.scores)[colourIndex]]--;
             }
-        }
+        };
         $scope.onlyNumbers = function(colourIndex){
             $scope.scores[Object.keys($scope.scores)[colourIndex]] = String($scope.scores[Object.keys($scope.scores)[colourIndex]]).replace(/\D/g,'');
-        }
+        };
         $scope.calculateScore = function(){
             $scope.scores.totalScore = $scope.scores.spotty * 1 +
             $scope.scores.black * 3 + $scope.scores.tiger * 6 +
@@ -34,7 +34,7 @@ angular.module('climbingApp')
             $scope.scores.yellow * 15 + $scope.scores.purpleYellow * 21 +
             $scope.scores.hendrix * 21 + $scope.scores.red * 28 +
             $scope.scores.white * 36 + $scope.scores.green * 45;
-        }
+        };
         $scope.postScores = function(){
             var scoresForm = {
                 spotty : $scope.scores.spotty,
@@ -50,15 +50,15 @@ angular.module('climbingApp')
                 green : $scope.scores.green,
                 score : $scope.scores.totalScore,
                 score_date : new Date().toISOString().substring(0, 10)
-            }
+            };
             $http.post("./api/archscores/", scoresForm)
                 .then(function(response) {
                     console.log("Score Posted successfully, here's the result:", response.data);
-                    window.alert("You score has been posted sussessfully")
+                    window.alert("You score has been posted sussessfully");
                     window.location.href = "./home.html";
                 }, function(response){
                     $scope.signupError = true;
                     console.log("Failure");
                 });
-        }
-    }])
+        };
+    }]);

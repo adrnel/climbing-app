@@ -3,23 +3,18 @@ angular.module('climbingApp')
         $scope.isLogin = true;
         $scope.isSignup = false;
         $scope.loginError = false;
-        $scope.username;
-        $scope.password;
-        $scope.confirmPassword;
         $scope.form={
            email:''
         };
-        //$scope.email;
-        $scope.loginForm;
 
         $scope.clickLoginTab = function(){
             $scope.isLogin = true;
             $scope.isSignup = false;
-        }
+        };
         $scope.clickSignupTab = function(){
             $scope.isLogin = false;
             $scope.isSignup = true;
-        }
+        };
         $scope.loginSubmit = function(){
             if($scope.isLogin){
                 $scope.loginError = false;
@@ -60,5 +55,5 @@ angular.module('climbingApp')
 
 
 
-        }
+        };
     }]);
