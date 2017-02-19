@@ -113,7 +113,11 @@ router.post('/api/archscores/', function(req, res) {
   var white = req.body.white || 0;
   var green = req.body.green || 0;
   var score = req.body.score || 0;
-  connection.query("INSERT INTO `climbing`.`arch_scores` (`user_id`, `spotty`, `black`, `tiger`, `blue`, `salmon`, `yellow`, `purple_yellow`, `hendrix`, `red`, `white`, `green`, `score`) VALUES (" + 1 + ", " + spotty + ", " + black + ", " + tiger + ", " + blue + ", " + salmon + ", " + yellow + ", " + purple_yellow + ", " + hendrix + ", " + red + ", " + white + ", " + green + ", " + green + ")", function(err, rows, fields) {
+  var score_date = req.body.score_date || (new Date()).toISOString().substring(0, 10);
+  console.log( "Date1",new Date());
+  console.log( "Date2",(new Date()).toISOString().substring(0, 10));
+  console.log( "score_date", score_date);
+  connection.query("INSERT INTO `climbing`.`arch_scores` (`user_id`, `spotty`, `black`, `tiger`, `blue`, `salmon`, `yellow`, `purple_yellow`, `hendrix`, `red`, `white`, `green`, `score`, `score_date`) VALUES (" + 1 + ", " + spotty + ", " + black + ", " + tiger + ", " + blue + ", " + salmon + ", " + yellow + ", " + purple_yellow + ", " + hendrix + ", " + red + ", " + white + ", " + green + ", " + score + ", " + score_date + ")", function(err, rows, fields) {
     if (err) {
       console.error(err);
       res.status(404);
