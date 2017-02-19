@@ -12,7 +12,7 @@ angular.module('climbingApp')
             red:0,
             white:0,
             green:0,
-            scores:0
+            totalScore:0
         }
         $scope.onlyNumbers = /^\d+$/;
 
@@ -27,7 +27,12 @@ angular.module('climbingApp')
         $scope.onlyNumbers = function(colourIndex){
             $scope.scores[Object.keys($scope.scores)[colourIndex]] = String($scope.scores[Object.keys($scope.scores)[colourIndex]]).replace(/\D/g,'');
         }
-        $scope.onlyNumbers = function(colourIndex){
-            $scope.scores[Object.keys($scope.scores)[colourIndex]] = String($scope.scores[Object.keys($scope.scores)[colourIndex]]).replace(/\D/g,'');
+        $scope.calculateScore = function(){
+            $scope.scores.totalScore = $scope.scores.spotty * 1 +
+            $scope.scores.black * 3 + $scope.scores.tiger * 6 +
+            $scope.scores.blue * 10 + $scope.scores.salmon * 10 +
+            $scope.scores.yellow * 15 + $scope.scores.purpleYellow * 21 +
+            $scope.scores.hendrix * 21 + $scope.scores.red * 28 +
+            $scope.scores.white * 36 + $scope.scores.green * 45;
         }
     }])
