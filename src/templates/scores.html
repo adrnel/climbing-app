@@ -2,18 +2,18 @@
     <div class="form-container">
         <form class="scores-form">
             <h2>Post your climbing scores</h2>
-            <div><label>Spotty:</label><input type="text" placeholder="Spotty"><button class="plus">+</button><button class="minus">-</button></div>
-            <div><label>Black:</label><input type="text" placeholder="Black"><button class="plus">+</button><button class="minus">-</button></div>
-            <div><label>Tiger:</label><input type="text" placeholder="Tiger"><button class="plus">+</button><button class="minus">-</button></div>
-            <div><label>Blue:</label><input type="text" placeholder="Blue"><button class="plus">+</button><button class="minus">-</button></div>
-            <div><label>Salmon:</label><input type="text" placeholder="Salmon"><button class="plus">+</button><button class="minus">-</button></div>
-            <div><label>Yellow:</label><input type="text" placeholder="Yellow"><button class="plus">+</button><button class="minus">-</button></div>
-            <div><label>Purple Yellow:</label><input type="text" placeholder="Purple Yellow"><button class="plus">+</button><button class="minus">-</button></div>
-            <div><label>Hendrix:</label><input type="text" placeholder="Hendrix"><button class="plus">+</button><button class="minus">-</button></div>
-            <div><label>Red:</label><input type="text" placeholder="Red"><button class="plus">+</button><button class="minus">-</button></div>
-            <div><label>White:</label><input type="text" placeholder="White"><button class="plus">+</button><button class="minus">-</button></div>
-            <div><label>Green:</label><input type="text" placeholder="Green"><button class="plus">+</button><button class="minus">-</button></div>
-            <div class="score-submit"><label>Score:</label><span class="score">100</span><button type="sumbit">Submit</button></div>
+            <div><label>Spotty:</label><input ng-model="scores.spotty" ng-change="onlyNumbers(0)" type="text" placeholder="Spotty"><button class="plus" ng-click="addOne(0)">+</button><button class="minus" ng-click="minusOne(0)">-</button></div>
+            <div><label>Black:</label><input ng-model="scores.black" ng-change="onlyNumbers(1)" type="text" placeholder="Black"><button class="plus" ng-click="addOne(1)">+</button><button class="minus" ng-click="minusOne(1)">-</button></div>
+            <div><label>Tiger:</label><input ng-model="scores.tiger" ng-change="onlyNumbers(2)" type="text" placeholder="Tiger"><button class="plus" ng-click="addOne(2)">+</button><button class="minus" ng-click="minusOne(2)">-</button></div>
+            <div><label>Blue:</label><input ng-model="scores.blue" ng-change="onlyNumbers(3)" type="text" placeholder="Blue"><button class="plus" ng-click="addOne(3)">+</button><button class="minus" ng-click="minusOne(3)">-</button></div>
+            <div><label>Salmon:</label><input ng-model="scores.salmon" ng-change="onlyNumbers(4)" type="text" placeholder="Salmon"><button class="plus" ng-click="addOne(4)">+</button><button class="minus" ng-click="minusOne(4)">-</button></div>
+            <div><label>Yellow:</label><input ng-model="scores.yellow" ng-change="onlyNumbers(5)" type="text" placeholder="Yellow"><button class="plus" ng-click="addOne(5)">+</button><button class="minus" ng-click="minusOne(5)">-</button></div>
+            <div><label>Purple Yellow:</label><input ng-model="scores.purpleYellow" ng-change="onlyNumbers(6)" type="text" placeholder="Purple Yellow"><button class="plus" ng-click="addOne(6)">+</button><button class="minus" ng-click="minusOne(6)">-</button></div>
+            <div><label>Hendrix:</label><input ng-model="scores.hendrix" ng-change="onlyNumbers(7)" type="text" placeholder="Hendrix"><button class="plus" ng-click="addOne(7)">+</button><button class="minus" ng-click="minusOne(7)">-</button></div>
+            <div><label>Red:</label><input ng-model="scores.red" ng-change="onlyNumbers(8)" type="text" placeholder="Red"><button class="plus" ng-click="addOne(8)">+</button><button class="minus" ng-click="minusOne(8)">-</button></div>
+            <div><label>White:</label><input ng-model="scores.white" ng-change="onlyNumbers(9)" type="text" placeholder="White"><button class="plus" ng-click="addOne(9)">+</button><button class="minus" ng-click="minusOne(9)">-</button></div>
+            <div><label>Green:</label><input ng-model="scores.green" ng-change="onlyNumbers(10)" type="text" placeholder="Green"><button class="plus" ng-click="addOne(10)">+</button><button class="minus" ng-click="minusOne(10)">-</button></div>
+            <div class="score-submit"><label>Score:</label><span class="score" ng-model="scores.total">100</span><button type="sumbit">Submit</button></div>
 
         </form>
     </div>
