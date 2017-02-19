@@ -35,4 +35,30 @@ angular.module('climbingApp')
             $scope.scores.hendrix * 21 + $scope.scores.red * 28 +
             $scope.scores.white * 36 + $scope.scores.green * 45;
         }
+        $scope.postScores = function(){
+            var scoresForm = {
+                spotty : $scope.scores.spotty,
+                black : $scope.scores.black,
+                tiger : $scope.scores.tiger,
+                blue : $scope.scores.blue,
+                salmon : $scope.scores.salmon,
+                yellow : $scope.scores.yellow,
+                purpleYellow : $scope.scores.purpleYellow,
+                hendrix : $scope.scores.hendrix,
+                red : $scope.scores.red,
+                white : $scope.scores.white,
+                green : $scope.scores.green,
+                score : $scope.scores.totalScore,
+                score_date : new Date().toISOString().substring(0, 10)
+            }
+            $http.post("./api/archscores/", scoresForm)
+                .then(function(response) {
+                    console.log("Score Posted successfully, here's the result:", response.data);
+                    window.alert("You score has been posted sussessfully")
+                    window.location.href = "./home.html";
+                }, function(response){
+                    $scope.signupError = true;
+                    console.log("Failure");
+                });
+        }
     }])
