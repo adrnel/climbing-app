@@ -28,7 +28,15 @@
     "mysql": "^2.11.1"
   },
   "devDependencies": {
+    "angular": "^1.6.3",
+    "angular-mocks": "^1.6.3",
+    "angular-ui-router": "^0.4.2",
     "gulp-jshint": "^2.0.4",
-    "jshint": "^2.9.4"
+    "jasmine": "^2.5.3",
+    "jasmine-core": "^2.5.2",
+    "jshint": "^2.9.4",
+    "karma": "^1.5.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-jasmine": "^1.1.0"
   }
 }
