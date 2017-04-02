@@ -155,6 +155,19 @@
     ```
     $ forever list
     ```
+
+<a name="testing"></a>
+
+## Testing the project
+- **Karma**
+
+    - Run the Karma Start commond in the root directory of the project to run all the specs
+
+    ```
+    $ karma start
+    ```
+
+
 <a name="deployproject"></a>
 
 ## Deploying the project

@@ -20,6 +20,7 @@ module.exports = function(config) {
         './node_modules/angular-mocks/angular-mocks.js',
         './src/js/app.js',
         './src/js/Controllers/login.js',
+        './src/js/Controllers/home.js',
         './tests/unit_tests/spec/jasmine_tests/*.js'
     ],
 
