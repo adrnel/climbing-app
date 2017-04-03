@@ -21,6 +21,7 @@ module.exports = function(config) {
         './src/js/app.js',
         './src/js/Controllers/login.js',
         './src/js/Controllers/home.js',
+        './src/js/Controllers/scores.js',
         './tests/unit_tests/spec/jasmine_tests/*.js'
     ],
 

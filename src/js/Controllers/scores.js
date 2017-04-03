@@ -14,7 +14,6 @@ angular.module('climbingApp')
             green:0,
             totalScore:0
         };
-        $scope.onlyNumbers = /^\d+$/;
 
         $scope.addOne = function(colourIndex){
             $scope.scores[Object.keys($scope.scores)[colourIndex]]++;
