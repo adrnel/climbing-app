@@ -56,7 +56,6 @@ angular.module('climbingApp')
                     window.alert("You score has been posted sussessfully");
                     window.location.href = "./home.html";
                 }, function(response){
-                    $scope.signupError = true;
                     console.log("Failure");
                 });
         };
