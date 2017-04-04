@@ -1,0 +1,30 @@
+.graph-container{
+    min-height: 400px;
+    color: black;
+    text-align: center;
+    .form-container{
+        margin: auto;
+        width: 900px;
+        padding-top: 70px;
+        .scores-form{
+            h2{
+                display: inline;
+                font-weight: bold;
+                padding: 20px 0px;
+            }
+            select{
+                margin-left: 43px;
+                top: -5px;
+                position: relative;
+            }
+            button{
+                margin-left: 10px;
+                top: -6px;
+                position: relative;
+            }
+        }
+    }
+    #chart_div{
+        margin-top: 30px;
+    }
+}

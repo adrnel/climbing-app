@@ -2,13 +2,10 @@
     <div class="form-container">
         <form class="scores-form" ng-submit="getScores()">
             <h2>User ID</h2>
-            <select ng-model="userId">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
+            <select ng-init="userId = ids[0]"  ng-model="userId" ng-options="item for item in ids">
             </select>
             <button type="sumbit">Submit</button>
         </form>
+        <div id="chart_div"></div>
     </div>
 </div>
