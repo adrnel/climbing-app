@@ -5,6 +5,7 @@ var uglify = require('gulp-uglify');
 var sass = require('gulp-sass');
 var connect = require('gulp-connect');
 var jshint = require('gulp-jshint');
+var Server = require('karma').Server;
 
 gulp.task('clean', function() {
   return del(['dist']);
@@ -26,7 +27,8 @@ gulp.task('build', ['clean'], function() {
 
 gulp.task('default', ['build'], function() {
     gulp.start([
-        'watch',
+        'test',
+        'watch'
     ]);
 });
 
@@ -92,4 +94,11 @@ gulp.task('connect', function() {
     root: './',
     livereload: true
   });
+});
+
+gulp.task('test', function (done) {
+    new Server({
+        configFile: __dirname + '/karma.conf.js',
+        singleRun: true
+    }, done).start();
 });
