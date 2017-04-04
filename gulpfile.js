@@ -6,6 +6,7 @@ var sass = require('gulp-sass');
 var connect = require('gulp-connect');
 var jshint = require('gulp-jshint');
 var Server = require('karma').Server;
+var gulpProtractorAngular = require('gulp-angular-protractor');
 
 gulp.task('clean', function() {
   return del(['dist']);
@@ -101,4 +102,18 @@ gulp.task('test', function (done) {
         configFile: __dirname + '/karma.conf.js',
         singleRun: true
     }, done).start();
+});
+
+gulp.task('protractor', function(callback) {
+    gulp
+        .src(['tests/e2e_tests/specs/*.js'])
+        .pipe(gulpProtractorAngular({
+            'configFile': 'tests/e2e_tests/conf.js',
+            'debug': false,
+            'autoStartStopServer': true
+        }))
+        .on('error', function(e) {
+            console.log(e);
+        })
+        .on('end', callback);
 });
