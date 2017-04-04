@@ -159,14 +159,27 @@
 <a name="testing"></a>
 
 ## Testing the project
-- **Karma**
+- **Unit testing - Karma & Jasmine**
 
-    - Run the Karma Start commond in the root directory of the project to run all the specs
+    - Run the Karma Start command in the root directory of the project to run all the specs
 
     ```
     $ karma start
     ```
+- **E2e testing - Protractor**
 
+    - Start up the server by running the web-driver command
+
+    ```
+    $ webdriver-manager start
+    ```
+
+    - In a new terminal window, change to the e2e_tests directory and run the protractor tests
+
+    ```
+    $ cd tests/e2e_tests
+    $ protractor conf.js
+    ```
 
 <a name="deployproject"></a>
 
