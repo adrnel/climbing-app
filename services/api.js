@@ -15,8 +15,8 @@ router.put('/api/login/', function(req, res) {
 
   var username = req.body.username;
   var password = req.body.password;
-  console.log('username', username);
-  console.log('password', password);
+  //console.log('username', username);
+  //console.log('password', password);
 
   connection.query("SELECT * FROM users WHERE user_name='" + username + "' AND user_password='" + password + "'", function(err, rows, fields) {
     if (err) {
@@ -24,9 +24,15 @@ router.put('/api/login/', function(req, res) {
       res.json(["Query error"]);
       return;
     }
-    console.log('The database users contains: ', rows);
+    //console.log('The database users contains: ', rows);
     if (rows.length > 0) {
-      res.json(rows);
+      req.session.user = {};
+      req.session.user.user_id = rows[0].user_id;
+      req.session.user.user_name = rows[0].user_name;
+      req.session.user.user_email = rows[0].user_email;
+      req.session.user.user_role = rows[0].user_role;
+      req.session.user.user_group = rows[0].user_group;
+        res.json(req.session.user);
     } else {
       res.status(403);
       res.json(["Invalid login details"]);
