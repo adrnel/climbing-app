@@ -123,6 +123,7 @@
     USER='username'  
     PASSWORD='password'  
     DATABASE='nameofdatabase'  
+    CLIMBING_SECRET_KEY='Key String'
 
     For windows, go to, System properties -> advanced -> Environment variables  
     Then create the above environment variables with the correct credentials for the variable values.  
