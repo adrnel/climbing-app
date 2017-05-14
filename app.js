@@ -4,10 +4,10 @@ var env = require('./env');
 var routes = require('./routes/index');
 var api = require('./services/api');
 var bodyParser = require('body-parser');
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
 var session = require('express-session');
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(session({
     secret: process.env.CLIMBING_SECRET_KEY,
     resave: false,

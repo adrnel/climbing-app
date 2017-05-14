@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var mysql = require('mysql');
+var bcrypt = require('bcrypt');
 
 var connection = mysql.createConnection({
   host: process.env.HOST,
@@ -18,20 +19,19 @@ router.put('/api/login/', function(req, res) {
   //console.log('username', username);
   //console.log('password', password);
 
-  connection.query("SELECT * FROM users WHERE user_name='" + username + "' AND user_password='" + password + "'", function(err, rows, fields) {
+  connection.query("SELECT * FROM users WHERE user_name='" + username + "'", function(err, rows, fields) {
     if (err) {
       console.error(err);
       res.json(["Query error"]);
       return;
     }
-    //console.log('The database users contains: ', rows);
-    if (rows.length > 0) {
-      req.session.user = {};
-      req.session.user.user_id = rows[0].user_id;
-      req.session.user.user_name = rows[0].user_name;
-      req.session.user.user_email = rows[0].user_email;
-      req.session.user.user_role = rows[0].user_role;
-      req.session.user.user_group = rows[0].user_group;
+    if (rows.length > 0 && bcrypt.compareSync(password, rows[0].user_password)) {
+        req.session.user = {};
+        req.session.user.user_id = rows[0].user_id;
+        req.session.user.user_name = rows[0].user_name;
+        req.session.user.user_email = rows[0].user_email;
+        req.session.user.user_role = rows[0].user_role;
+        req.session.user.user_group = rows[0].user_group;
         res.json(req.session.user);
     } else {
       res.status(403);
@@ -139,7 +139,7 @@ router.post('/api/archscores/', function(req, res) {
 router.post('/api/signup/', function(req, res) {
 
   var username = req.body.username;
-  var password = req.body.password;
+  var password =  bcrypt.hashSync(req.body.password, 10);
   var email = req.body.email;
   console.log('email', email);
   console.log('username', username);
@@ -190,8 +190,5 @@ router.post('/api/signup/', function(req, res) {
   }
 
 });
-
-
-
 
 module.exports = router;

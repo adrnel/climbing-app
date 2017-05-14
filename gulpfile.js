@@ -8,6 +8,18 @@ var jshint = require('gulp-jshint');
 var Server = require('karma').Server;
 var gulpProtractorAngular = require('gulp-angular-protractor');
 
+gulp.task('deploy', ['clean'], function(){
+    return gulp.start([
+        'externalCSS',
+        'appCSS',
+        'externalJS',
+        'appJS',
+        'images',
+        'fonts',
+        'html'
+    ]);
+})
+
 gulp.task('clean', function() {
   return del(['dist']);
 });
