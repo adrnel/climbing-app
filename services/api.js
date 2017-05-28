@@ -98,8 +98,24 @@ router.get('/api/archscores/', function(req, res) {
         res.json(["No scores found"]);
       }
     });
-  } else {
-    res.status(404);
+  } else if(req.session.user.user_id) {
+      connection.query('SELECT * FROM arch_scores WHERE user_id=' + req.session.user.user_id, function(err, rows, fields) {
+          if (err) {
+              console.error(err);
+              res.status(404);
+              res.json(["Query error"]);
+              return;
+          }
+          console.log('The database users contains: ', rows);
+
+          if (rows.length > 0) {
+              res.json(rows);
+          } else {
+              res.status(204);
+              res.json(["No scores found"]);
+          }
+      });
+  } else {res.status(404);
     res.json([]);
     return;
   }
@@ -123,7 +139,7 @@ router.post('/api/archscores/', function(req, res) {
   console.log( "Date1",new Date());
   console.log( "Date2",(new Date()).toISOString().substring(0, 10));
   console.log( "score_date", score_date);
-  connection.query("INSERT INTO `climbing`.`arch_scores` (`user_id`, `spotty`, `black`, `tiger`, `blue`, `salmon`, `yellow`, `purple_yellow`, `hendrix`, `red`, `white`, `green`, `score`, `score_date`) VALUES (" + 1 + ", " + spotty + ", " + black + ", " + tiger + ", " + blue + ", " + salmon + ", " + yellow + ", " + purple_yellow + ", " + hendrix + ", " + red + ", " + white + ", " + green + ", " + score + ", " + score_date + ")", function(err, rows, fields) {
+  connection.query("INSERT INTO `climbing`.`arch_scores` (`user_id`, `spotty`, `black`, `tiger`, `blue`, `salmon`, `yellow`, `purple_yellow`, `hendrix`, `red`, `white`, `green`, `score`, `score_date`) VALUES (" + req.session.user.user_id + ", " + spotty + ", " + black + ", " + tiger + ", " + blue + ", " + salmon + ", " + yellow + ", " + purple_yellow + ", " + hendrix + ", " + red + ", " + white + ", " + green + ", " + score + ", " + score_date + ")", function(err, rows, fields) {
     if (err) {
       console.error(err);
       res.status(404);

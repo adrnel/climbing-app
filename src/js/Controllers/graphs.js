@@ -1,7 +1,6 @@
 angular.module('climbingApp')
     .controller("graphsCtrl", ["$scope", "$location", "$http", '$timeout', function ($scope, $location, $http, $timeout) {
 
-        $scope.ids = [1,15,3,4,5,6,7,8,9,10];
         $scope.graphType = ["Grade Bands", "Scores"];
 
         // Load the Visualization API and the corechart package.
@@ -9,7 +8,7 @@ angular.module('climbingApp')
 
         $scope.getScores = function(){
             if ($scope.graphStyle === "Grade Bands") {
-                $http.get("./api/archscores?userId=" + $scope.userId)
+                $http.get("./api/archscores")
                     .then(function (response) {
 
                         function drawChart() {
@@ -70,7 +69,7 @@ angular.module('climbingApp')
                         console.log("Failure");
                     });
             } else if ($scope.graphStyle === "Scores") {
-                $http.get("./api/archscores?userId=" + $scope.userId)
+                $http.get("./api/archscores")
                     .then(function (response) {
 
                         function drawChart() {
