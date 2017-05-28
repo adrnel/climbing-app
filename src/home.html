@@ -33,10 +33,10 @@
     </span>
 </div>
 <div id="mobile-dropdown-header-container" ng-class="isDropdown?'showing':'hiding'">
-    <div class="dropdown-item"><a href="/home.html#!/dashboard">Home</a></div>
-    <div class="dropdown-item"><a href="/home.html#!/scores">Post Scores</a></div>
-    <div class="dropdown-item"><a href="/home.html#!/graphs">Graphs</a></div>
-    <div class="dropdown-item"><a href="/home.html#!/admin">Admin</a></div>
+    <div class="dropdown-item" ng-click="clickMobileMenu()"><a href="/home.html#!/dashboard">Home</a></div>
+    <div class="dropdown-item" ng-click="clickMobileMenu()"><a href="/home.html#!/scores">Post Scores</a></div>
+    <div class="dropdown-item" ng-click="clickMobileMenu()"><a href="/home.html#!/graphs">Graphs</a></div>
+    <div class="dropdown-item" ng-click="clickMobileMenu()"><a href="/home.html#!/admin">Admin</a></div>
 </div>
 <div ng-view id="main">
 
