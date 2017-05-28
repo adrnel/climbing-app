@@ -28,24 +28,24 @@
         position: relative;
         top: 9px;
     }
-    .header-list .selected a{
+    .header-list .menu-item.selected a{
         color: blue;
         pointer-events: none;
         cursor: default;
     }
-    .header-list .unselected a, .header-list .mobile-menu a{
+    .header-list .menu-item a, .header-list .mobile-menu a{
         color: #000;
         text-decoration: none;
     }
-    .header-list .unselected-icon a{
+    .header-list .menu-item-icon a{
         color: #6d6d6d;
         text-decoration: none;
     }
-    .header-list .unselected a:hover{
+    .header-list .menu-item a:hover{
        background-color: #f1f3f5;
        color: #c50000;
     }
-    .header-list .unselected-icon a:hover{
+    .header-list .menu-item a:hover{
          color: #000;
     }
     .desktop-hidden.header-list{
@@ -71,7 +71,7 @@
     .image-two{
         background-image: url(../img/graphs.jpg);
     }
-    .button-link-one, .button-link-two,{
+    .button-link-one, .button-link-two{
         position: relative;
         top: 45%;
         h2{
@@ -151,7 +151,7 @@
            // width: 20%;
         }
 
-        .unselected-icon{
+        .menu-item-icon{
             width: 60%;
         }
 
@@ -159,11 +159,11 @@
             width: 20%;
         }
 
-        .header-list li.unselected, .header-list li.selected{
+        .header-list li.menu-item, .header-list li.menu-item.selected{
             display: none;
         }
 
-        .header-list li.unselected-icon{
+        .header-list li.menu-item-icon{
             display: inline;
         }
 

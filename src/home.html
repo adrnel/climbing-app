@@ -19,11 +19,11 @@
 
     <span class="header-list">
         <ul>
-            <li class="selected"><a href="/home.html#!/dashboard">Home</a></li>
-            <li class="unselected"><a href="/home.html#!/scores">Post Scores</a></li>
-            <li class="unselected"><a href="/home.html#!/graphs">Graphs</a></li>
-            <li class="unselected"><a href="/home.html#!/admin">Admin</a></li>
-            <li class="unselected-icon"><a href="#"><i class="fa fa-user" aria-hidden="true"></i></a></li>
+            <li class="menu-item" ng-class="{selected: (location === '/') || (location === '/dashboard')}"><a href="/home.html#!/dashboard">Home</a></li>
+            <li class="menu-item" ng-class="{selected: location === '/scores'}"><a href="/home.html#!/scores">Post Scores</a></li>
+            <li class="menu-item" ng-class="{selected: location === '/graphs'}"><a href="/home.html#!/graphs">Graphs</a></li>
+            <li class="menu-item" ng-class="{selected: location === '/admin'}"><a href="/home.html#!/admin">Admin</a></li>
+            <li class="menu-item-icon"><a href="#"><i class="fa fa-user" aria-hidden="true"></i></a></li>
         </ul>
     </span>
     <span class="header-list desktop-hidden">
