@@ -15,6 +15,8 @@ angular.module('climbingApp')
             totalScore:0
         };
 
+        $scope.date = new Date();
+
         $scope.addOne = function(colourIndex){
             $scope.scores[Object.keys($scope.scores)[colourIndex]]++;
         };
@@ -27,7 +29,7 @@ angular.module('climbingApp')
             $scope.scores[Object.keys($scope.scores)[colourIndex]] = String($scope.scores[Object.keys($scope.scores)[colourIndex]]).replace(/\D/g,'');
         };
         $scope.calculateScore = function(){
-            $scope.scores.totalScore = $scope.scores.spotty * 1 +
+            $scope.scores.totalScore = $scope.scores.spotty +
             $scope.scores.black * 3 + $scope.scores.tiger * 6 +
             $scope.scores.blue * 10 + $scope.scores.salmon * 10 +
             $scope.scores.yellow * 15 + $scope.scores.purpleYellow * 21 +
@@ -48,7 +50,7 @@ angular.module('climbingApp')
                 white : $scope.scores.white,
                 green : $scope.scores.green,
                 score : $scope.scores.totalScore,
-                score_date : new Date().toISOString().substring(0, 10)
+                score_date : $scope.date.toISOString().substring(0, 10)
             };
             $http.post("./api/archscores/", scoresForm)
                 .then(function(response) {

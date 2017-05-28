@@ -13,6 +13,7 @@
             <div><label>Red:</label><input ng-model="scores.red" ng-change="onlyNumbers(8); calculateScore()" type="text" placeholder="Red"><button class="plus" type="button" ng-click="addOne(8); calculateScore()">+</button><button class="minus" type="button" ng-click="minusOne(8); calculateScore()">-</button></div>
             <div><label>White:</label><input ng-model="scores.white" ng-change="onlyNumbers(9); calculateScore()" type="text" placeholder="White"><button class="plus" type="button" ng-click="addOne(9); calculateScore()">+</button><button class="minus" type="button" ng-click="minusOne(9); calculateScore()">-</button></div>
             <div><label>Green:</label><input ng-model="scores.green" ng-change="onlyNumbers(10); calculateScore()" type="text" placeholder="Green"><button class="plus" type="button" ng-click="addOne(10); calculateScore()">+</button><button class="minus" type="button" ng-click="minusOne(10); calculateScore()">-</button></div>
+            <div><label>Date:</label><input class="date-input" ng-model="date" type="date" placeholder="Date"></div>
             <div class="score-submit"><label>Score:</label><span class="score" ng-model="scores.totalScore">{{scores.totalScore}}</span><button type="sumbit">Submit</button></div>
         </form>
     </div>

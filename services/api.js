@@ -21,6 +21,7 @@ router.put('/api/login/', function(req, res) {
 
   connection.query("SELECT * FROM users WHERE user_name='" + username + "'", function(err, rows, fields) {
     if (err) {
+      console.log('this.sql', this.sql); //command/query
       console.error(err);
       res.json(["Query error"]);
       return;
@@ -50,6 +51,7 @@ router.get('/api/archscores/', function(req, res) {
   if (scoreId && userId) {
     connection.query('SELECT * FROM arch_scores WHERE score_id=' + scoreId + ' AND user_id=' + userId, function(err, rows, fields) {
       if (err) {
+        console.log('this.sql', this.sql); //command/query
         console.error(err);
         res.status(404);
         res.json(["Query error"]);
@@ -67,6 +69,7 @@ router.get('/api/archscores/', function(req, res) {
   } else if (scoreId) {
     connection.query('SELECT * FROM arch_scores WHERE score_id=' + scoreId, function(err, rows, fields) {
       if (err) {
+        console.log('this.sql', this.sql); //command/query
         console.error(err);
         res.status(404);
         res.json(["Query error"]);
@@ -84,6 +87,7 @@ router.get('/api/archscores/', function(req, res) {
   } else if (userId) {
     connection.query('SELECT * FROM arch_scores WHERE user_id=' + userId, function(err, rows, fields) {
       if (err) {
+        console.log('this.sql', this.sql); //command/query
         console.error(err);
         res.status(404);
         res.json(["Query error"]);
@@ -101,6 +105,7 @@ router.get('/api/archscores/', function(req, res) {
   } else if(req.session.user.user_id) {
       connection.query('SELECT * FROM arch_scores WHERE user_id=' + req.session.user.user_id, function(err, rows, fields) {
           if (err) {
+              console.log('this.sql', this.sql); //command/query
               console.error(err);
               res.status(404);
               res.json(["Query error"]);
@@ -136,11 +141,9 @@ router.post('/api/archscores/', function(req, res) {
   var green = req.body.green || 0;
   var score = req.body.score || 0;
   var score_date = req.body.score_date || (new Date()).toISOString().substring(0, 10);
-  console.log( "Date1",new Date());
-  console.log( "Date2",(new Date()).toISOString().substring(0, 10));
-  console.log( "score_date", score_date);
-  connection.query("INSERT INTO `climbing`.`arch_scores` (`user_id`, `spotty`, `black`, `tiger`, `blue`, `salmon`, `yellow`, `purple_yellow`, `hendrix`, `red`, `white`, `green`, `score`, `score_date`) VALUES (" + req.session.user.user_id + ", " + spotty + ", " + black + ", " + tiger + ", " + blue + ", " + salmon + ", " + yellow + ", " + purple_yellow + ", " + hendrix + ", " + red + ", " + white + ", " + green + ", " + score + ", " + score_date + ")", function(err, rows, fields) {
+  connection.query("INSERT INTO `climbing`.`arch_scores` (`user_id`, `spotty`, `black`, `tiger`, `blue`, `salmon`, `yellow`, `purple_yellow`, `hendrix`, `red`, `white`, `green`, `score`, `score_date`) VALUES (" + req.session.user.user_id + ", " + spotty + ", " + black + ", " + tiger + ", " + blue + ", " + salmon + ", " + yellow + ", " + purple_yellow + ", " + hendrix + ", " + red + ", " + white + ", " + green + ", " + score + ", STR_TO_DATE('"+score_date+"', '%Y-%m-%d'))", function(err, rows, fields) {
     if (err) {
+      console.log('this.sql', this.sql); //command/query
       console.error(err);
       res.status(404);
       res.json(["Query error"]);
@@ -164,6 +167,7 @@ router.post('/api/signup/', function(req, res) {
   if (username && password && email) {
     connection.query("SELECT * FROM users WHERE user_email='" + email + "'", function(err, rows, fields) {
       if (err) {
+        console.log('this.sql', this.sql); //command/query
         console.error(err);
         res.status(404);
         res.json(["Query error"]);
@@ -175,6 +179,7 @@ router.post('/api/signup/', function(req, res) {
       } else {
         connection.query("SELECT * FROM users WHERE user_name='" + username + "'", function(err, rows, fields) {
           if (err) {
+            console.log('this.sql', this.sql); //command/query
             console.error(err);
             res.status(404);
             res.json(["Query error"]);
@@ -186,6 +191,7 @@ router.post('/api/signup/', function(req, res) {
           } else {
             connection.query("INSERT INTO `climbing`.`users` (`user_name`, `user_password`, `user_email`, `user_role`, `user_group`) VALUES ('" + username + "', '" + password + "', '" + email + "', 'user', 'default')", function(err, rows, fields) {
               if (err) {
+                console.log('this.sql', this.sql); //command/query
                 console.error(err);
                 res.status(404);
                 res.json(["Query error"]);
