@@ -97,10 +97,12 @@
         }
     }
     .button-link-one{
+        width: 48%;
         left: 52%;
     }
 
     .button-link-two{
+        width: 48%;
         left: 27%;
     }
 }
@@ -206,6 +208,7 @@
             .button-link-one, .button-link-two{
                 text-align: center;
                 left: auto;
+                width: 100%;
             }
         }
         .image-two{
