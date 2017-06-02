@@ -16,9 +16,10 @@ gulp.task('deploy', ['clean'], function(){
         'appJS',
         'images',
         'fonts',
-        'html'
+        'html',
+        'test'
     ]);
-})
+});
 
 gulp.task('clean', function() {
   return del(['dist']);
