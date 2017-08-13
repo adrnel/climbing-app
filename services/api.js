@@ -52,7 +52,7 @@ router.get('/api/archscores/', function(req, res) {
   var toDate = req.query.toDate;
   if (req.session.user.user_id && fromDate && toDate) {
     console.log("Correct Score Function");
-    connection.query('SELECT * FROM arch_scores WHERE user_id=' + req.session.user.user_id + " AND score_date > STR_TO_DATE('"+fromDate+"', '%Y-%m-%d') AND score_date < STR_TO_DATE('"+toDate+"', '%Y-%m-%d')", function(err, rows, fields) {
+    connection.query('SELECT * FROM arch_scores WHERE user_id=' + req.session.user.user_id + " AND score_date >= STR_TO_DATE('"+fromDate+"', '%Y-%m-%d') AND score_date <= STR_TO_DATE('"+toDate+"', '%Y-%m-%d')", function(err, rows, fields) {
       if (err) {
         console.log('this.sql', this.sql); //command/query
         console.error(err);
