@@ -2,13 +2,19 @@ angular.module('climbingApp')
     .controller("graphsCtrl", ["$scope", "$location", "$http", '$timeout', function ($scope, $location, $http, $timeout) {
 
         $scope.graphType = ["Grade Bands", "Scores"];
+        $scope.fromDate  = new Date();
+        $scope.toDate  = new Date();
 
         // Load the Visualization API and the corechart package.
         google.charts.load('current', {'packages':['corechart']});
 
         $scope.getScores = function(){
+            var graphForm = {
+                fromDate : $scope.fromDate.toISOString().substring(0, 10),
+                toDate : $scope.toDate.toISOString().substring(0, 10)
+            };
             if ($scope.graphStyle === "Grade Bands") {
-                $http.get("./api/archscores")
+                $http.get("./api/archscores", { params: graphForm })
                     .then(function (response) {
 
                         function drawChart() {
@@ -69,7 +75,7 @@ angular.module('climbingApp')
                         console.log("Failure");
                     });
             } else if ($scope.graphStyle === "Scores") {
-                $http.get("./api/archscores")
+                $http.get("./api/archscores", { params: graphForm })
                     .then(function (response) {
 
                         function drawChart() {

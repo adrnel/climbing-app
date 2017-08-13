@@ -48,7 +48,28 @@ router.get('/api/archscores/', function(req, res) {
 
   var scoreId = req.query.scoreId;
   var userId = req.query.userId;
-  if (scoreId && userId) {
+  var fromDate = req.query.fromDate;
+  var toDate = req.query.toDate;
+  if (req.session.user.user_id && fromDate && toDate) {
+    console.log("Correct Score Function");
+    connection.query('SELECT * FROM arch_scores WHERE user_id=' + req.session.user.user_id + " AND score_date > STR_TO_DATE('"+fromDate+"', '%Y-%m-%d') AND score_date < STR_TO_DATE('"+toDate+"', '%Y-%m-%d')", function(err, rows, fields) {
+      if (err) {
+        console.log('this.sql', this.sql); //command/query
+        console.error(err);
+        res.status(404);
+        res.json(["Query error"]);
+        return;
+      }
+      console.log('The database users contains: ', rows);
+
+      if (rows.length > 0) {
+        res.json(rows);
+      } else {
+        res.status(204);
+        res.json(["No scores found"]);
+      }
+    });
+  } else if (scoreId && userId) {
     connection.query('SELECT * FROM arch_scores WHERE score_id=' + scoreId + ' AND user_id=' + userId, function(err, rows, fields) {
       if (err) {
         console.log('this.sql', this.sql); //command/query
