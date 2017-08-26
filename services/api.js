@@ -4,7 +4,7 @@ var mysql = require('mysql');
 var bcrypt = require('bcrypt');
 
 var connection = mysql.createConnection({
-  host: process.env.HOST,
+  host: process.env.HOSTDB,
   user: process.env.USER,
   password: process.env.PASSWORD,
   database: process.env.DATABASE
