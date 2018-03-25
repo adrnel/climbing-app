@@ -50,4 +50,4 @@ VALUES ("test", "password", "a@mail.com", "user", "default");
 
 INSERT INTO arch_scores (user_id, spotty, black, tiger, blue, salmon,
 yellow, purple_yellow, hendrix, red, white, green, score, score_date)
-VALUES (1, 0, 3, 4, 5, 4, 3, 0, 0, 0, 0, 0, 0, 2017-01-31);
+VALUES (1, 0, 3, 4, 5, 4, 3, 0, 0, 0, 0, 0, 0, '2018-03-25');
