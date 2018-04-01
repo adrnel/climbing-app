@@ -1,23 +1,23 @@
 <div class="graph-container">
     <div class="form-container">
-        <form class="scores-form" ng-submit="getScores()">
+        <form class="dropdowns-container" ng-submit="getScores()">
             <div>
-            <h2>Graph Type</h2>
-            <select ng-init="graphStyle = graphType[0]"  ng-model="graphStyle" ng-options="graph for graph in graphType">
-            </select>
+                <h2>Graph Type</h2>
+                <select ng-init="graphStyle = graphType[0]"  ng-model="graphStyle" ng-options="graph for graph in graphType">
+                </select>
             </div>
             <div>
                 <h2>From Date</h2>
                 <input class="date-input" ng-model="fromDate" type="date" placeholder="Date">
-                </select>
             </div>
             <div>
                 <h2>To Date</h2>
                 <input class="date-input" ng-model="toDate" type="date" placeholder="Date">
-                </select>
             </div>
             <button type="sumbit">Submit</button>
         </form>
-        <div id="chart_div"></div>
+        <div id="chart_wrap">
+            <div id="chart_div"></div>
+        </div>
     </div>
 </div>

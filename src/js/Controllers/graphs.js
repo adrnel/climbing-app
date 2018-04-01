@@ -2,8 +2,9 @@ angular.module('climbingApp')
     .controller("graphsCtrl", ["$scope", "$location", "$http", '$timeout', function ($scope, $location, $http, $timeout) {
 
         $scope.graphType = ["Grade Bands", "Scores"];
-        $scope.fromDate  = new Date();
-        $scope.toDate  = new Date();
+        $scope.toDate = new Date();
+        var tempDate = new Date()
+        $scope.fromDate = new Date(tempDate.setMonth(tempDate.getMonth()-3))
 
         // Load the Visualization API and the corechart package.
         google.charts.load('current', {'packages':['corechart']});
@@ -54,8 +55,6 @@ angular.module('climbingApp')
                             // Set chart options
                             var options = {
                                 'title': 'Climbing Results',
-                                'width': 900,
-                                'height': 500,
                                 hAxis: {
                                     title: 'Colour'
                                 },
@@ -94,8 +93,6 @@ angular.module('climbingApp')
                             // Set chart options
                             var options = {
                                 'title': 'Climbing Results',
-                                'width': 900,
-                                'height': 500,
                                 hAxis: {
                                     title: 'Date'
                                 },
