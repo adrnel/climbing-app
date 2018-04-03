@@ -30,7 +30,7 @@
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.0",
     "gulp-connect": "^5.0.0",
-    "gulp-sass": "^2.3.2",
+    "gulp-sass": "^3.2.1",
     "gulp-uglify": "^2.0.0",
     "gulp-angular-protractor": "^0.4.2",
     "gulp-jshint": "^2.0.4",
@@ -42,7 +42,5 @@
     "karma-jasmine": "^1.1.0",
     "karma-phantomjs-launcher": "^1.0.4"
   },
-  "devDependencies": {
-
-  }
+  "devDependencies": {}
 }

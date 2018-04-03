@@ -3,8 +3,8 @@ angular.module('climbingApp')
 
         $scope.graphType = ["Grade Bands", "Scores"];
         $scope.toDate = new Date();
-        var tempDate = new Date()
-        $scope.fromDate = new Date(tempDate.setMonth(tempDate.getMonth()-3))
+        var tempDate = new Date();
+        $scope.fromDate = new Date(tempDate.setMonth(tempDate.getMonth()-3));
 
         // Load the Visualization API and the corechart package.
         google.charts.load('current', {'packages':['corechart']});
