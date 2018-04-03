@@ -28,7 +28,7 @@ app.get('/index', function (req, res) {
   res.sendFile(__dirname + '/dist/index.html');
 });
 
-app.listen(process.env.PORT_NUMBER, function () {
-  console.log('Example app listening on port '+ process.env.PORT_NUMBER+'!');
+app.listen(process.env.PORT || 3000, function () {
+  console.log('Example app listening on port '+ process.env.PORT || 3000+'!');
 });
 
