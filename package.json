@@ -23,17 +23,15 @@
     "del": "^2.2.2",
     "express": "^4.14.0",
     "express-session": "^1.15.2",
+    "mysql": "^2.11.1",
+    "angular": "^1.6.3",
+    "angular-mocks": "^1.6.3",
+    "angular-ui-router": "^0.4.2",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.0",
     "gulp-connect": "^5.0.0",
     "gulp-sass": "^2.3.2",
     "gulp-uglify": "^2.0.0",
-    "mysql": "^2.11.1"
-  },
-  "devDependencies": {
-    "angular": "^1.6.3",
-    "angular-mocks": "^1.6.3",
-    "angular-ui-router": "^0.4.2",
     "gulp-angular-protractor": "^0.4.2",
     "gulp-jshint": "^2.0.4",
     "jasmine": "^2.5.3",
@@ -43,5 +41,8 @@
     "karma-chrome-launcher": "^2.0.0",
     "karma-jasmine": "^1.1.0",
     "karma-phantomjs-launcher": "^1.0.4"
+  },
+  "devDependencies": {
+
   }
 }

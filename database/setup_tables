@@ -5,7 +5,7 @@ CREATE TABLE users
 (
 user_id int NOT NULL AUTO_INCREMENT,
 user_name varchar(20) NOT NULL,
-user_password varchar(20) NOT NULL,
+user_password varchar(80) NOT NULL,
 user_email varchar(40) NOT NULL,
 user_role varchar(40) NOT NULL,
 user_group varchar(40) NOT NULL,
@@ -46,7 +46,7 @@ SELECT * FROM arch_scores;
 DELETE FROM `climbing`.`users` WHERE `user_id`='3';
 
 INSERT INTO users (user_name, user_password, user_email, user_role, user_group)
-VALUES ("test", "password", "a@mail.com", "user", "default");
+VALUES ("adrian", "adrian", "a@mail.com", "user", "default");
 
 INSERT INTO arch_scores (user_id, spotty, black, tiger, blue, salmon,
 yellow, purple_yellow, hendrix, red, white, green, score, score_date)
