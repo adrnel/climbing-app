@@ -1,6 +1,5 @@
 var express = require('express');
 var app = express();
-var env = require('./env');
 var routes = require('./routes/index');
 var api = require('./services/api');
 var bodyParser = require('body-parser');
