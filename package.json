@@ -6,7 +6,7 @@
   "scripts": {
     "test": "test",
     "start": "node app.js",
-    "postinstall": "gulp deploy"
+    "postinstall": "cd src && ./node_modules/bower/bin/bower install && cd .. && gulp deploy"
   },
   "repository": {
     "type": "git",
