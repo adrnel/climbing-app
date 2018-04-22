@@ -6,7 +6,7 @@
   "scripts": {
     "test": "test",
     "start": "node app.js",
-    "postinstall": "npm install && gulp deploy"
+    "postinstall": "gulp deploy"
   },
   "repository": {
     "type": "git",
