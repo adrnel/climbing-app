@@ -1,12 +1,15 @@
 {
   "name": "climbing-app",
   "version": "1.0.0",
+  "engines": {
+    "node": "8.11.1"
+  },
   "description": "Climbing App",
   "main": "index.js",
   "scripts": {
     "test": "test",
     "start": "node app.js",
-    "postinstall": "cd src && ./node_modules/bower/bin/bower install && cd .. && gulp deploy"
+    "postinstall": "cd src && ./node_modules/bower/bin/bower install && cd .. && ./node_modules/gulp/bin/gulp deploy"
   },
   "repository": {
     "type": "git",
@@ -19,29 +22,30 @@
   },
   "homepage": "https://github.com/adrnel/climbing-app#readme",
   "dependencies": {
-    "bcrypt": "^1.0.2",
-    "body-parser": "^1.15.2",
-    "del": "^2.2.2",
-    "express": "^4.14.0",
-    "express-session": "^1.15.2",
-    "mysql": "^2.11.1",
     "angular": "^1.6.3",
     "angular-mocks": "^1.6.3",
     "angular-ui-router": "^0.4.2",
+    "bcrypt": "^1.0.2",
+    "body-parser": "^1.15.2",
+    "bower": "^1.8.4",
+    "del": "^2.2.2",
+    "express": "^4.14.0",
+    "express-session": "^1.15.2",
     "gulp": "^3.9.1",
+    "gulp-angular-protractor": "^0.4.2",
     "gulp-concat": "^2.6.0",
     "gulp-connect": "^5.0.0",
+    "gulp-jshint": "^2.0.4",
     "gulp-sass": "^3.2.1",
     "gulp-uglify": "^2.0.0",
-    "gulp-angular-protractor": "^0.4.2",
-    "gulp-jshint": "^2.0.4",
     "jasmine": "^2.5.3",
     "jasmine-core": "^2.5.2",
     "jshint": "^2.9.4",
     "karma": "^1.5.0",
     "karma-chrome-launcher": "^2.0.0",
     "karma-jasmine": "^1.1.0",
-    "karma-phantomjs-launcher": "^1.0.4"
+    "karma-phantomjs-launcher": "^1.0.4",
+    "mysql": "^2.11.1"
   },
   "devDependencies": {}
 }
