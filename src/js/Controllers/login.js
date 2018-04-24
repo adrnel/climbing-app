@@ -43,7 +43,7 @@ angular.module('climbingApp')
                 console.log("Signup clicked");
                 $http.post("./api/signup/", signupForm)
                     .then(function(response) {
-                        console.log("successful signup, here's the user:", response.data);
+                        window.alert("You have succesfully created a user");
                         window.location.href = "./home.html";
                     }, function(response){
                         $scope.signupError = true;
