@@ -23,7 +23,7 @@
             <li class="menu-item" ng-class="{selected: location === '/scores'}"><a href="/home.html#!/scores">Post Scores</a></li>
             <li class="menu-item" ng-class="{selected: location === '/graphs'}"><a href="/home.html#!/graphs">Graphs</a></li>
             <li class="menu-item" ng-class="{selected: location === '/admin'}"><a href="/home.html#!/admin">Admin</a></li>
-            <li class="menu-item-icon"><a href="#"><i class="fa fa-user" aria-hidden="true"></i></a></li>
+            <li class="menu-item-icon" ng-click="logout()"><i class="fa fa-sign-out" aria-hidden="true"></i></li>
         </ul>
     </span>
     <span class="header-list desktop-hidden">

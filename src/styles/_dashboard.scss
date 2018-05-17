@@ -8,7 +8,6 @@
     height: 42px;
     z-index: 4;
     .header-logo{
-
         height: 40px;
         float: left;
         display: inline;
@@ -42,14 +41,18 @@
         text-decoration: none;
     }
     .header-list .menu-item a:hover{
-       background-color: #f1f3f5;
-       color: #c50000;
+        background-color: #f1f3f5;
+        color: #c50000;
     }
     .header-list .menu-item a:hover{
-         color: #000;
+        color: #000;
+    }
+    .header-list .menu-item-icon i:hover{
+        color: red;
+        cursor: pointer;
     }
     .desktop-hidden.header-list{
-      display: none;
+        display: none;
     }
 }
 

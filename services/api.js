@@ -12,6 +12,12 @@ var connection = mysql.createConnection({
 
 connection.connect();
 
+router.post('/api/logout', function(req, res) {
+    req.session.destroy();
+    res.status(200);
+    res.json(["Logged out"]);
+});
+
 router.put('/api/login/', function(req, res) {
 
   var username = req.body.username;
