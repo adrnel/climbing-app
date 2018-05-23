@@ -161,14 +161,14 @@ router.post('/api/archscores/', function(req, res) {
   var blue = req.body.blue || 0;
   var salmon = req.body.salmon || 0;
   var yellow = req.body.yellow || 0;
-  var purple_yellow = req.body.purple_yellow || 0;
+  var yurple = req.body.yurple || 0;
   var hendrix = req.body.hendrix || 0;
   var red = req.body.red || 0;
   var white = req.body.white || 0;
   var green = req.body.green || 0;
   var score = req.body.score || 0;
   var score_date = req.body.score_date || (new Date()).toISOString().substring(0, 10);
-  connection.query("INSERT INTO `" + process.env.DATABASE + "`.`arch_scores` (`user_id`, `spotty`, `black`, `tiger`, `blue`, `salmon`, `yellow`, `purple_yellow`, `hendrix`, `red`, `white`, `green`, `score`, `score_date`) VALUES (" + req.session.user.user_id + ", " + spotty + ", " + black + ", " + tiger + ", " + blue + ", " + salmon + ", " + yellow + ", " + purple_yellow + ", " + hendrix + ", " + red + ", " + white + ", " + green + ", " + score + ", STR_TO_DATE('"+score_date+"', '%Y-%m-%d'))", function(err, rows, fields) {
+  connection.query("INSERT INTO `" + process.env.DATABASE + "`.`arch_scores` (`user_id`, `spotty`, `black`, `tiger`, `blue`, `salmon`, `yellow`, `yurple`, `hendrix`, `red`, `white`, `green`, `score`, `score_date`) VALUES (" + req.session.user.user_id + ", " + spotty + ", " + black + ", " + tiger + ", " + blue + ", " + salmon + ", " + yellow + ", " + yurple + ", " + hendrix + ", " + red + ", " + white + ", " + green + ", " + score + ", STR_TO_DATE('"+score_date+"', '%Y-%m-%d'))", function(err, rows, fields) {
     if (err) {
       console.log('this.sql', this.sql); //command/query
       console.error(err);

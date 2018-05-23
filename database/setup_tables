@@ -24,7 +24,7 @@ tiger int NOT NULL,
 blue int NOT NULL,
 salmon int NOT NULL,
 yellow int NOT NULL,
-purple_yellow int NOT NULL,
+yurple int NOT NULL,
 hendrix int NOT NULL,
 red int NOT NULL,
 white int NOT NULL,
@@ -49,5 +49,5 @@ INSERT INTO users (user_name, user_password, user_email, user_role, user_group)
 VALUES ("adrian", "adrian", "a@mail.com", "user", "default");
 
 INSERT INTO arch_scores (user_id, spotty, black, tiger, blue, salmon,
-yellow, purple_yellow, hendrix, red, white, green, score, score_date)
+yellow, yurple, hendrix, red, white, green, score, score_date)
 VALUES (1, 0, 3, 4, 5, 4, 3, 0, 0, 0, 0, 0, 0, '2018-03-25');

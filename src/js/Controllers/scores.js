@@ -7,7 +7,7 @@ angular.module('climbingApp')
             blue:0,
             salmon:0,
             yellow:0,
-            purpleYellow:0,
+            yurple:0,
             hendrix:0,
             red:0,
             white:0,
@@ -32,7 +32,7 @@ angular.module('climbingApp')
             $scope.scores.totalScore = $scope.scores.spotty +
             $scope.scores.black * 3 + $scope.scores.tiger * 6 +
             $scope.scores.blue * 10 + $scope.scores.salmon * 10 +
-            $scope.scores.yellow * 15 + $scope.scores.purpleYellow * 21 +
+            $scope.scores.yellow * 15 + $scope.scores.yurple * 21 +
             $scope.scores.hendrix * 21 + $scope.scores.red * 28 +
             $scope.scores.white * 36 + $scope.scores.green * 45;
         };
@@ -44,7 +44,7 @@ angular.module('climbingApp')
                 blue : $scope.scores.blue,
                 salmon : $scope.scores.salmon,
                 yellow : $scope.scores.yellow,
-                purpleYellow : $scope.scores.purpleYellow,
+                yurple : $scope.scores.yurple,
                 hendrix : $scope.scores.hendrix,
                 red : $scope.scores.red,
                 white : $scope.scores.white,

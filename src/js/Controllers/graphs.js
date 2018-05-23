@@ -29,7 +29,7 @@ angular.module('climbingApp')
                                 ['blue'],
                                 ['salmon'],
                                 ['yellow'],
-                                ['purple & yellow'],
+                                ['yurple'],
                                 ['hendrix'],
                                 ['red'],
                                 ['white'],
@@ -44,7 +44,7 @@ angular.module('climbingApp')
                                 rowData[3].push(response.data[i].blue);
                                 rowData[4].push(response.data[i].salmon);
                                 rowData[5].push(response.data[i].yellow);
-                                rowData[6].push(response.data[i].purple_yellow);
+                                rowData[6].push(response.data[i].yurple);
                                 rowData[7].push(response.data[i].hendrix);
                                 rowData[8].push(response.data[i].red);
                                 rowData[9].push(response.data[i].white);

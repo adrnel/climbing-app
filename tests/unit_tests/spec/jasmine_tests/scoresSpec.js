@@ -57,7 +57,7 @@ describe("Scores Page", function() {
                 blue:4,
                 salmon:6,
                 yellow:4,
-                purpleYellow:2,
+                yurple:2,
                 hendrix:1,
                 red:0,
                 white:0,
